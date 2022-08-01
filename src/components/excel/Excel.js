@@ -13,9 +13,9 @@ export class Excel {
       const $el = $.create('div', Component.className)
       const component = new Component($el)
       // Debug
-      if (Component.name) {
-        window['c' + Component.name] = component
-      }
+      // if (Component.name) {
+      //   window['c' + Component.name] = component
+      // }
       $el.html(component.toHTML())
       $root.append($el)
       return component
