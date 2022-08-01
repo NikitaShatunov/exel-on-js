@@ -8,11 +8,12 @@ const isProd = process.env.NODE_ENV === 'production';
 const isDev = !isProd;
 console.log('IS PROD', isProd);
 console.log('IS DEV', isDev); 
-const isLoader = () => {
+const jsLoader = () => {
     const loaders = [
         {loader: "babel-loader",
               options: {
-                presets: ['@babel/preset-env']
+                presets: ['@babel/preset-env'],
+                plugins: ['@babel/plugin-proposal-class-properties']
               }}
              
     ]
@@ -75,7 +76,7 @@ module.exports = {
           {
             test: /\.m?js$/,
             exclude: /node_modules/,
-            use: isLoader()
+            use: jsLoader()
         },
         ],
       },
