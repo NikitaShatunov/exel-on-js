@@ -33,6 +33,23 @@ class Dom {
     }
     return this
   }
+  closest(selector) {
+    return $(this.$el.closest(selector))
+  }
+  coords() {
+    return this.$el.getBoundingClientRect()
+  }
+  get data() {
+    return this.$el.dataset
+  }
+  findAll(selector) {
+    return this.$el.querySelectorAll(selector)
+  }
+  css(styles = {}) {
+    Object.keys(styles).forEach((key) => {
+      this.$el.style[key] = styles[key]
+    })
+  }
 }
 
 $('div').html('<h1>TESSERACT</h1>').clear()

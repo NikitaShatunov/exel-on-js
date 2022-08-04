@@ -23,6 +23,7 @@
         border: 1px solid $border-color;
         background: #f8f9fa;
         border-top: none;
+        position: relative;
     }
     .row-data {
         display: flex;
@@ -38,6 +39,7 @@
         height: 100%;
         border-top: 0;
         border-left: 0;
+        position: relative;
     }
     .cell {
         min-width: 40px;
@@ -54,6 +56,30 @@
             border: none;
             outline: 2px solid #3c74ff;
             z-index: 2;
+        }
+    }
+    .col-resize, .row-resize {
+        position: absolute;
+        right: 0;
+        opacity: 0;
+        bottom: 0;
+        background: #3c74ff;
+        z-index: 1000;
+    }
+    .col-resize {
+        top: 0;
+        width: 4px;
+        &:hover {
+            opacity: 1!important;
+            cursor: col-resize;
+              }
+    }
+    .row-resize {
+        left: 0;
+        height: 4px;
+        &:hover {
+            opacity: 1;
+            cursor: row-resize;
         }
     }
 } 
